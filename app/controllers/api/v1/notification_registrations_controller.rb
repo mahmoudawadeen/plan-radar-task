@@ -2,7 +2,7 @@ class Api::V1::NotificationRegistrationsController < ApplicationController
   before_action :set_api_v1_notification_registration, only: %i[ destroy ]
 
   # POST /api/v1/news/:city/register
-  def create
+  def upsert
     @api_v1_notification_registration = NotificationRegistrationService.call(api_v1_notification_registration_params)
 
     if @api_v1_notification_registration.save
