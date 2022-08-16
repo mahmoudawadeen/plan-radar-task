@@ -1,6 +1,6 @@
 class WeatherService < ApplicationService
   BASE_URL = 'https://api.openweathermap.org/data/2.5'
-  WEATHER_PATH = "weather?q=%{query}&appid=#{ENV.fetch('WEATHER_API_KEY')}"
+  WEATHER_PATH = "weather?q=%{query}&appid=#{ENV.fetch('WEATHER_API_KEY','WEATHER_API_KEY NOT FOUND')}"
 
   def call
     weather_path_with_city = WEATHER_PATH % { query: @query }
