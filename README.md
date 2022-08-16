@@ -1,6 +1,6 @@
 # Plan radar task
 ## Weather and News API
-
+Postman doc: https://documenter.getpostman.com/view/22771398/VUjTmPGw
 ### Assumptions
 1. The inconsistent API scheme was on purpose, the GET endpoint is not version while the POST is versions (v1).
 2. Each user can register for a city with both notification methods, mail and mobile.
@@ -84,3 +84,8 @@ mutagen-compose exec app rails runner ""
 4. `bundle exec rails db:migrate`
 5. `bundle exec rails s`
 > Since the migration ran before starting the app, the token will be printed to the console.
+
+### Authentication
+```
+Authorization: Token token=<access_token>
+```
