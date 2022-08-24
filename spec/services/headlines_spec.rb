@@ -6,7 +6,7 @@ describe HeadlinesService, type: :helper do
   let(:latest_news) {['news']}
   it "calls news gem with correct params" do
     news_api = News.new(news_api_key)
-    expect(ENV).to receive(:fetch).with('NEWS_API_CACHE_MINUTES',anything).and_return(30)
+    expect(ENV).to receive(:fetch).with('NEWS_API_CACHE_MINUTES',anything).and_return("30")
     expect(ENV).to receive(:fetch).with('NEWS_API_KEY',anything).and_return(news_api_key)
     expect(News).to receive(:new).with(news_api_key).and_return(news_api)
     expect(news_api).to receive(:get_top_headlines).with(q: city)
